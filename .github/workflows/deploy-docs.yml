@@ -25,10 +25,7 @@ jobs:
           cache: pip
 
       - name: Install dependencies
-        run: |
-          pip install \
-            mkdocs-material \
-            mkdocs-minify-plugin
+        run: pip install -r requirements.txt
 
       - name: Build and deploy
         run: mkdocs gh-deploy --force
