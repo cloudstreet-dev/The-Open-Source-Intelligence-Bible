@@ -84,6 +84,7 @@ OSINT, by definition, operates on publicly available information. But "publicly 
 Every chapter in this book includes ethical considerations. The legal chapter (Chapter 3) provides foundational frameworks. Specific legal cautions appear throughout.
 
 This book does not promote or enable:
+
 - Unauthorized access to computer systems
 - Covert surveillance of private individuals without legal authority
 - Stalking, harassment, or targeting of individuals
