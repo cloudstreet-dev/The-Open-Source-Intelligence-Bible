@@ -63,6 +63,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D
 import json
+from collections import Counter
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple, Any
 
@@ -379,10 +380,9 @@ class InvestigationGraph:
             'investigation': self.name,
             'total_entities': len(self.G.nodes),
             'total_relationships': len(self.G.edges),
-            'entity_types': dict(
+            'entity_types': dict(Counter(
                 nx.get_node_attributes(self.G, 'type').values()
-                if self.G.nodes else {}
-            ),
+            )) if self.G.nodes else {},
             'top_brokers': [
                 {
                     'entity': entity_id,

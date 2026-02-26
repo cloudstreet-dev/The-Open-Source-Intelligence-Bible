@@ -31,7 +31,7 @@ This appendix consolidates the legal frameworks, statutes, and regulatory resour
 
 ### Wiretapping and Recording Laws
 **Federal baseline**: 18 U.S.C. § 2511 — one-party consent at federal level
-**State variation**: California, Connecticut, Florida, Illinois, Maryland, Massachusetts, Michigan, Montana, Nevada, New Hampshire, Oregon, Pennsylvania, Washington require all-party consent
+**State variation**: California, Connecticut, Florida, Illinois, Maryland, Massachusetts, Montana, Nevada, New Hampshire, Oregon, Pennsylvania, Washington require all-party consent
 **Relevance**: Recording interviews, monitoring communications
 **Resources**: Reporters Committee for Freedom of the Press state-by-state guide: rcfp.org/resources/recording-phone-calls-and-conversations/
 
@@ -165,7 +165,7 @@ Graph API has significantly restricted data access since the Cambridge Analytica
 | New York | Yes (DCJS) | 3 years experience; background check |
 | Florida | Yes (FDLE) | 2 years experience; licensure exam |
 | Illinois | Yes | 3 years law enforcement or 5 years PI experience |
-| Washington | Yes | No license required for PI work (one of few states) |
+| Washington | Yes (DOL) | 2 years experience; state license required |
 | Colorado | No state license | Local jurisdiction requirements vary |
 | Idaho | No | No statewide PI license requirement |
 

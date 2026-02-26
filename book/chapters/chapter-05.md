@@ -191,16 +191,23 @@ Many people use consistent usernames across platforms. Once a username is identi
 # Install: pip install sherlock-project
 # CLI: sherlock username
 
-# Python integration
+# Python integration via subprocess
+# Note: --json writes results to {username}.json, not stdout
 import subprocess
 import json
+import os
 
 def search_username(username):
-    result = subprocess.run(
+    subprocess.run(
         ['sherlock', '--print-found', '--json', username],
         capture_output=True, text=True
     )
-    return json.loads(result.stdout)
+    # Sherlock writes JSON output to {username}.json in the working directory
+    json_file = f'{username}.json'
+    if os.path.exists(json_file):
+        with open(json_file) as f:
+            return json.load(f)
+    return {}
 
 findings = search_username('targetusername')
 for platform, data in findings.items():
@@ -222,23 +229,25 @@ Email addresses are powerful pivots for account discovery:
 # Install: pip install holehe
 # CLI: holehe email@example.com
 
-# Python integration
-import asyncio
-from holehe import holehe
+# Python integration via subprocess (holehe's programmatic API changes frequently;
+# the CLI is the most stable interface)
+import subprocess
+import re
 
-async def check_email_registrations(email):
+def check_email_registrations(email):
+    result = subprocess.run(
+        ['holehe', '--only-used', email],
+        capture_output=True, text=True
+    )
     results = []
-    async for result in holehe.check_email(email):
-        if result['exists']:
-            results.append({
-                'platform': result['name'],
-                'registered': True,
-                'url': result.get('url', '')
-            })
+    for line in result.stdout.splitlines():
+        # holehe marks found accounts with [+]
+        if '[+]' in line:
+            platform = re.sub(r'.*\[\+\]\s*', '', line).strip()
+            results.append({'platform': platform, 'registered': True})
     return results
 
-# Run
-email_results = asyncio.run(check_email_registrations('target@example.com'))
+email_results = check_email_registrations('target@example.com')
 ```
 
 ### Profile Photo Cross-Platform Matching

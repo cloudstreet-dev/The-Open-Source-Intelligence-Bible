@@ -46,7 +46,7 @@ Modern AI systems are built on artificial neural networks — mathematical struc
 
 **Layers**: Neural networks process input through sequences of mathematical transformations (layers). Deep learning refers to networks with many layers.
 
-**Parameters (weights)**: The learned values that define the network's behavior. Large language models like GPT-4 have hundreds of billions of parameters.
+**Parameters (weights)**: The learned values that define the network's behavior. Modern large language models have tens to hundreds of billions of parameters, with exact counts often undisclosed by model developers.
 
 **Training**: The process of adjusting parameters to minimize prediction error on training data.
 
@@ -113,7 +113,7 @@ Hallucination is not a bug being fixed — it is an inherent property of how the
 
 **OpenAI GPT-4/o-series**: Broad capability with excellent code generation and tool use. GPT-4 Vision (and o-series) adds multimodal capability.
 
-**Google Gemini**: Tight integration with Google services and strong multimodal capability. Gemini Ultra is Google's most capable tier.
+**Google Gemini**: Tight integration with Google services and strong multimodal capability. Google's most capable tier (currently Gemini Ultra/Advanced) evolves frequently; check current model lineup for up-to-date options.
 
 **Meta LLaMA**: Open-weight models that can be run locally, important for privacy-sensitive investigations where sending data to cloud APIs is unacceptable.
 

@@ -595,7 +595,7 @@ class GeospatialInvestigation:
         """Return events sorted by timestamp"""
         return sorted(self.events, key=lambda e: e.timestamp)
 
-    def find_co-location_patterns(self, time_window_hours=24):
+    def find_colocation_patterns(self, time_window_hours=24):
         """Identify events that occurred in the same area within a time window"""
         from geopy.distance import distance
         from datetime import datetime, timedelta

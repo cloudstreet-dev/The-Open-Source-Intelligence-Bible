@@ -260,7 +260,8 @@ def extract_entities(text: str) -> List[Dict]:
     for match in re.finditer(ip_pattern, text):
         ip = match.group()
         # Skip private ranges
-        if not (ip.startswith('192.168.') or ip.startswith('10.') or ip.startswith('172.')):
+        second_octet = int(ip.split('.')[1]) if ip.startswith('172.') else 0
+        if not (ip.startswith('192.168.') or ip.startswith('10.') or (ip.startswith('172.') and 16 <= second_octet <= 31)):
             entities.append({'type': 'IP', 'value': ip, 'context': text[max(0, match.start()-50):match.end()+50]})
 
     # Domains

@@ -649,7 +649,7 @@ matplotlib>=3.8.0
 folium>=0.15.0
 
 # AI APIs
-anthropic>=0.21.0
+anthropic>=0.40.0
 openai>=1.10.0
 
 # Security and crypto

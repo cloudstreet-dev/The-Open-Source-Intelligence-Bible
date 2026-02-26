@@ -96,7 +96,7 @@ When sensitive techniques are discussed, they are framed defensively — to help
 
 ## A Note on AI Content
 
-Portions of this book use AI-assisted drafting and were reviewed and refined by human subject matter experts. AI tools were used as research accelerants and drafting aids — not as autonomous authors. All technical claims have been reviewed for accuracy.
+Portions of this book use AI-assisted drafting and were reviewed and refined by human subject matter experts. AI tools were used as research accelerants and drafting aids — not as autonomous authors.
 
 The irony of using AI tools to write about AI tools in OSINT is not lost on us. We consider it appropriate.
 

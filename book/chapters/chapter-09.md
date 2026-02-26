@@ -181,7 +181,7 @@ Mandarin-language content and China-focused coverage makes Baidu essential for:
 
 ## 9.4 The Wayback Machine and Web Archiving
 
-The Internet Archive's Wayback Machine (web.archive.org) is one of the most valuable OSINT resources in existence. It has been crawling and archiving the web since 1996 and contains over 800 billion pages.
+The Internet Archive's Wayback Machine (web.archive.org) is one of the most valuable OSINT resources in existence. It has been crawling and archiving the web since 1996 and contains over 900 billion pages.
 
 ### Strategic Wayback Machine Use
 

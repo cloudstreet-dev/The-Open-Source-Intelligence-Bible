@@ -391,7 +391,7 @@ python-whois==0.9.0
 dnspython==2.4.0
 
 # AI/LLM
-anthropic==0.18.0
+anthropic>=0.40.0
 openai==1.10.0
 
 # Utilities

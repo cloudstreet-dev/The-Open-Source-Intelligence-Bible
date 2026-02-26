@@ -43,7 +43,7 @@ Regulatory mandates drive institutional OSINT demand. AML regulations — the Ba
 
 ### Beneficial Ownership Requirements
 
-The Corporate Transparency Act (U.S., effective 2024) requires most U.S. corporations to report beneficial owners — individuals who own 25%+ or who exercise substantial control — to FinCEN. This creates a central registry of ultimate beneficial owners.
+The Corporate Transparency Act (U.S., enacted 2021, with reporting requirements phased in from 2024) requires most U.S. corporations to report beneficial owners — individuals who own 25%+ or who exercise substantial control — to FinCEN. Implementation has faced ongoing legal challenges; verify current enforcement status before relying on BOI data availability.
 
 European AML directives have progressively required public beneficial ownership registers. EU5AMLD made these public; some member states have implemented fully searchable databases.
 

@@ -12,7 +12,7 @@ This appendix provides a structured reference to the tools discussed throughout 
 | Maigret | Username OSINT with detailed profile reports | Free/OSS | N/A (CLI) | 5, 15 |
 | Holehe | Check email against platforms | Free/OSS | N/A (CLI) | 5 |
 | Instaloader | Instagram downloader (public profiles) | Free/OSS | N/A (CLI) | 5, 15 |
-| Twint | Twitter scraping without API | Free/OSS | N/A | 5 |
+| Twint | Twitter scraping without API | Free/OSS (deprecated) | N/A | 5 |
 | PRAW | Python Reddit API wrapper | Free | Yes (Reddit API) | 5, 14 |
 | Meltwater | Media monitoring and social listening | Paid | Yes | 16 |
 | Brandwatch | Social analytics and listening | Paid | Yes | 16 |
@@ -152,8 +152,8 @@ This appendix provides a structured reference to the tools discussed throughout 
 | Hunter.io | 25 searches/month | $49+/month |
 | VirusTotal | 4 req/min | $200+/month (enterprise) |
 | NewsAPI | 100 req/day | $449/month |
-| Anthropic API | None (pay per use) | ~$3-15/MTok (model dependent) |
-| OpenAI API | None (pay per use) | ~$2.50-10/MTok |
+| Anthropic API | None (pay per use) | ~$3-15/MTok input (model dependent; output tokens higher) |
+| OpenAI API | None (pay per use) | ~$2.50-10/MTok input (model dependent; output tokens higher) |
 | OpenCorporates | 100 req/month | Contact for pricing |
 | Sentinel Hub | 30,000 processing units | $22+/month |
 
