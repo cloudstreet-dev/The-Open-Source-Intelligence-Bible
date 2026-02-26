@@ -1,0 +1,117 @@
+site_name: The Open Source Intelligence Bible
+site_description: A Comprehensive Technical Guide to Modern OSINT Practice
+site_author: CloudStreet
+site_url: https://cloudstreet-dev.github.io/The-Open-Source-Intelligence-Bible/
+
+repo_name: cloudstreet-dev/The-Open-Source-Intelligence-Bible
+repo_url: https://github.com/cloudstreet-dev/The-Open-Source-Intelligence-Bible
+
+docs_dir: book
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
+plugins:
+  - search:
+      lang: en
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+  - attr_list
+  - def_list
+  - md_in_html
+
+nav:
+  - Home: README.md
+  - "Part I — Foundations":
+    - "Ch 1: What OSINT Is": chapters/chapter-01.md
+    - "Ch 2: The Data Landscape": chapters/chapter-02.md
+    - "Ch 3: Legal and Ethical Frameworks": chapters/chapter-03.md
+    - "Ch 4: Core Investigative Workflow": chapters/chapter-04.md
+  - "Part II — Core Collection":
+    - "Ch 5: Social Media Intelligence": chapters/chapter-05.md
+    - "Ch 6: Domain and Network Recon": chapters/chapter-06.md
+    - "Ch 7: Public Records": chapters/chapter-07.md
+    - "Ch 8: Geospatial Intelligence": chapters/chapter-08.md
+    - "Ch 9: Advanced Search and Historical Data": chapters/chapter-09.md
+  - "Part III — AI and Data Processing":
+    - "Ch 10: AI Fundamentals": chapters/chapter-10.md
+    - "Ch 11: Processing Unstructured Data at Scale": chapters/chapter-11.md
+    - "Ch 12: LLMs and Prompt Engineering": chapters/chapter-12.md
+    - "Ch 13: Network Analysis and Graph Intelligence": chapters/chapter-13.md
+  - "Part IV — Automation and Tooling":
+    - "Ch 14: Automation and Investigative Pipelines": chapters/chapter-14.md
+    - "Ch 15: The OSINT Tool Ecosystem": chapters/chapter-15.md
+    - "Ch 16: AI-Enhanced Investigative Platforms": chapters/chapter-16.md
+    - "Ch 17: Visualization and Reporting": chapters/chapter-17.md
+  - "Part V — Applied Domains":
+    - "Ch 18: Private Investigator Workflows": chapters/chapter-18.md
+    - "Ch 19: Bounty Hunting and Vulnerability Research": chapters/chapter-19.md
+    - "Ch 20: Threat Intelligence and Cybersecurity": chapters/chapter-20.md
+    - "Ch 21: Financial Crime and AML": chapters/chapter-21.md
+    - "Ch 22: Corporate Security and Due Diligence": chapters/chapter-22.md
+  - "Part VI — Enterprise and Advanced":
+    - "Ch 23: Enterprise-Scale Analysis": chapters/chapter-23.md
+    - "Ch 24: Adversarial OSINT and Counter-Intelligence": chapters/chapter-24.md
+    - "Ch 25: Emerging Technologies and Future AI": chapters/chapter-25.md
+    - "Ch 26: Operational Security and Risk Management": chapters/chapter-26.md
+    - "Ch 27: Designing Your OSINT Stack": chapters/chapter-27.md
+  - "Part VII — Professional Practice":
+    - "Ch 28: Real-World Case Studies": chapters/chapter-28.md
+    - "Ch 29: Pitfalls, Bias, and Failure Modes": chapters/chapter-29.md
+    - "Ch 30: The Future of OSINT Practice": chapters/chapter-30.md
+  - "Appendices":
+    - "Appendix A: Tool Reference": appendices/appendix-a-tool-reference.md
+    - "Appendix B: Python Code Examples": appendices/appendix-b-python-examples.md
+    - "Appendix C: Legal Resources": appendices/appendix-c-legal-resources.md
+    - "Appendix D: Glossary": appendices/appendix-d-glossary.md
+    - "Appendix E: Further Reading": appendices/appendix-e-further-reading.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cloudstreet-dev/The-Open-Source-Intelligence-Bible
+
+copyright: Copyright &copy; 2025 CloudStreet
