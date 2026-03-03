@@ -7,9 +7,9 @@ This appendix provides a consolidated reference to the Python code patterns used
 ## B.1 HTTP Requests and Rate Limiting
 
 ```python
+import functools
 import requests
 import time
-from functools import wraps
 from typing import Optional, Dict
 
 class RateLimitedSession:
@@ -50,7 +50,9 @@ data = session.get_json("https://api.example.com/endpoint", params={"q": "query"
 ## B.2 Certificate Transparency Log Search
 
 ```python
+import concurrent.futures
 import requests
+import socket
 from typing import Set
 
 def ct_log_subdomains(domain: str) -> Set[str]:
@@ -75,9 +77,6 @@ def ct_log_subdomains(domain: str) -> Set[str]:
 
 
 # DNS resolution for discovered subdomains
-import socket
-from concurrent.futures import ThreadPoolExecutor
-
 def resolve_domain(domain: str) -> dict:
     try:
         ip = socket.gethostbyname(domain)
@@ -86,7 +85,7 @@ def resolve_domain(domain: str) -> dict:
         return {'domain': domain, 'ip': None, 'resolved': False}
 
 def bulk_resolve(domains: list, max_workers: int = 20) -> list:
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
         results = list(executor.map(resolve_domain, domains))
     return results
 ```
@@ -285,6 +284,7 @@ def analyze_graph(G: nx.DiGraph) -> Dict:
         pass
 
     # Community detection (requires undirected graph)
+    # Note: imported inside try/except to handle optional dependency gracefully
     try:
         import community as community_louvain
         G_undirected = G.to_undirected()
@@ -336,12 +336,14 @@ def visualize_graph(G: nx.DiGraph, output_path: str = None, figsize: Tuple = (15
 ## B.6 Document Processing Pipeline
 
 ```python
+import json
+import pathlib
+import subprocess
+import cv2
+import numpy as np
 import pdfplumber
 import pytesseract
 from PIL import Image
-import cv2
-import numpy as np
-from pathlib import Path
 from typing import Dict, List
 
 def extract_pdf_text(pdf_path: str) -> Dict:
@@ -402,8 +404,6 @@ def ocr_image(image_path: str, language: str = 'eng') -> str:
 
 def extract_exif(file_path: str) -> Dict:
     """Extract EXIF metadata using exiftool"""
-    import subprocess, json
-
     try:
         result = subprocess.run(
             ['exiftool', '-json', '-a', '-G', file_path],
@@ -485,11 +485,11 @@ class DeduplicatingStore:
 ## B.8 Elasticsearch Integration
 
 ```python
-from elasticsearch import Elasticsearch, helpers
+import datetime
+import elasticsearch
 from typing import List, Dict, Generator
-from datetime import datetime
 
-es = Elasticsearch(['http://localhost:9200'])
+es = elasticsearch.Elasticsearch(['http://localhost:9200'])
 
 def bulk_index_documents(index_name: str, documents: List[Dict]) -> Dict:
     """Bulk index documents efficiently"""
@@ -498,10 +498,10 @@ def bulk_index_documents(index_name: str, documents: List[Dict]) -> Dict:
             yield {
                 "_index": index_name,
                 "_id": doc.get('id') or doc.get('fingerprint'),
-                "_source": {**doc, "@timestamp": datetime.utcnow().isoformat()}
+                "_source": {**doc, "@timestamp": datetime.datetime.utcnow().isoformat()}
             }
 
-    success, failed = helpers.bulk(
+    success, failed = elasticsearch.helpers.bulk(
         es,
         generate_actions(documents),
         raise_on_error=False,
@@ -541,7 +541,7 @@ def search_entities(index_pattern: str, entity_type: str,
 
 ```python
 import anthropic
-from datetime import datetime
+import datetime
 from typing import List, Dict
 
 def generate_investigation_report(
@@ -563,7 +563,7 @@ def generate_investigation_report(
 
 SUBJECT: {subject}
 INVESTIGATION TYPE: {investigation_type}
-DATE: {datetime.now().strftime('%Y-%m-%d')}
+DATE: {datetime.datetime.now().strftime('%Y-%m-%d')}
 
 FINDINGS:
 {findings_text}
@@ -592,7 +592,7 @@ def export_to_markdown(report_text: str, output_path: str) -> None:
     """Export report to markdown file"""
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(f"# Investigation Report\n\n")
-        f.write(f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}*\n\n")
+        f.write(f"*Generated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}*\n\n")
         f.write("---\n\n")
         f.write(report_text)
 
